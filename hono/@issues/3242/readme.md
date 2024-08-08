@@ -42,3 +42,9 @@ bun run dev
 ```
 
 open <http://localhost:3000/index.html>
+
+To test:
+
+```sh
+bun test
+```

@@ -5,8 +5,5 @@
   },
   "dependencies": {
     "hono": "^4.5.4"
-  },
-  "devDependencies": {
-    "@types/bun": "latest"
   }
 }
