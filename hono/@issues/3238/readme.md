@@ -1,6 +1,6 @@
-# @hono/issues-3242
+# @hono/issues-3238
 
-[https://github.com/honojs/hono/issues/3242](https://github.com/honojs/hono/issues/3242)
+[https://github.com/honojs/hono/issues/3238](https://github.com/honojs/hono/issues/3238)
 
 ## Solution
 
