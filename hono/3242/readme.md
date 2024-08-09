@@ -4,7 +4,9 @@
 
 ## Solution
 
-Please check [https://github.com/honojs/hono/issue/3242#issuecomment-2275418065](https://github.com/honojs/hono/issue/3242#issuecomment-2275418065) of solution being provided.
+Please check
+[https://github.com/honojs/hono/issue/3242#issuecomment-2275418065](https://github.com/honojs/hono/issue/3242#issuecomment-2275418065)
+of solution being provided.
 
 > **Not working**
 
@@ -16,8 +18,18 @@ app.get("*", serveStatic({ path: "./public/index.html" })); // fallback
 > **Working**
 
 ```ts
-app.get("*", serveStatic({ root: `${relative(process.cwd(), __dirname)}/../client/dist/` }));
-app.get("*", serveStatic({ path: `${relative(process.cwd(), __dirname)}/client/dist/index.html` })); // fallback
+app.get(
+  "*",
+  serveStatic({
+    root: `${relative(process.cwd(), __dirname)}/../client/dist/`,
+  }),
+);
+app.get(
+  "*",
+  serveStatic({
+    path: `${relative(process.cwd(), __dirname)}/client/dist/index.html`,
+  }),
+); // fallback
 ```
 
 ## Setup

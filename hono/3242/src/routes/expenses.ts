@@ -1,8 +1,8 @@
 import { Hono } from "hono";
 
-const expensesRoute = new Hono()
+const expensesRoute = new Hono();
 
-expensesRoute.get('/', (c) => c.text('GET /expenses'))
-expensesRoute.post('/', (c) => c.text('POST /expenses'))
+expensesRoute.get("/", (c) => c.text("GET /expenses"));
+expensesRoute.post("/", (c) => c.text("POST /expenses"));
 
-export { expensesRoute }
+export { expensesRoute };
