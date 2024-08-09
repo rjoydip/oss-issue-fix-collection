@@ -22,11 +22,11 @@ app.get("*", serveStatic({ path: `${relative(process.cwd(), __dirname)}/client/d
 
 ## Setup
 
-To clone this repo
+To clone:
 
 ```sh
 git clone https://github.com/rjoydip/oss-issue-solving/git
-cd oss-issue-solving/hono/@issue/3242
+cd oss-issue-solving/hono/@issues/3242
 ```
 
 To install dependencies:

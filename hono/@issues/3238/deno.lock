@@ -2,6 +2,7 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "jsr:@hono/hono@4.5.4": "jsr:@hono/hono@4.5.4",
       "jsr:@hono/hono@^4.5.4": "jsr:@hono/hono@4.5.4",
       "jsr:@std/assert@^1.0.2": "jsr:@std/assert@1.0.2",
       "jsr:@std/internal@^1.0.1": "jsr:@std/internal@1.0.1"

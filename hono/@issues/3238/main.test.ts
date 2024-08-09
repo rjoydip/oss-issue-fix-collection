@@ -134,11 +134,29 @@ Deno.test({
 });
 
 Deno.test({
-  name: "should validate endpoint GET /",
+  name: "should validate static assets path when strict is false - resolved",
+  sanitizeResources: false,
   async fn() {
-    const app = new Hono();
-    app.get("/", (c) => c.text("Please test me"));
-    const res = await app.request("http://localhost/");
-    assertEquals(res.status, 200);
+    const app = new Hono({
+      strict: false,
+    });
+
+    app.use(
+      "*",
+      serveStatic({
+        root: "./static",
+        rewriteRequestPath: (path) => {
+          return path.replace("/hello.world", "/hello.world/");
+        },
+      }),
+    );
+    const res_1 = await app.request(
+      "http://localhost/hello.world/",
+    );
+    assertEquals(res_1.status, 200);
+    const res_2 = await app.request(
+      "http://localhost/hello.world/index.html",
+    );
+    assertEquals(res_2.status, 200);
   },
 });

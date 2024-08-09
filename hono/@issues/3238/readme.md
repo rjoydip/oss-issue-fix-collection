@@ -4,7 +4,19 @@
 
 ## Solution
 
-Seems like no issue, everthing is working fine.
+Provided solution here [3238#issuecomment-2278379005](https://github.com/honojs/hono/issues/3238#issuecomment-2278379005)
+
+```diff
+app.use(
+    "*",
+    serveStatic({
+        root: "./static",
++        rewriteRequestPath: (path) => {
++           return path.replace("/hello.world", "/hello.world/");
++       },
+    }),
+);
+```
 
 ## Setup
 
@@ -15,16 +27,8 @@ git clone https://github.com/rjoydip/oss-issue-solving/git
 cd oss-issue-solving/hono/@issues/3238
 ```
 
-To run:
-
-```sh
-deno task dev
-```
-
-open <http://localhost:8000>
-
 To test:
 
 ```sh
-deno task test
+deno test --allow-read --quiet
 ```
