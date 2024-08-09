@@ -1,10 +1,10 @@
-# @hono/issues-3242
+# @hono/issue-3242
 
-[https://github.com/honojs/hono/issues/3242](https://github.com/honojs/hono/issues/3242)
+[https://github.com/honojs/hono/issue/3242](https://github.com/honojs/hono/issue/3242)
 
 ## Solution
 
-Please check [https://github.com/honojs/hono/issues/3242#issuecomment-2275418065](https://github.com/honojs/hono/issues/3242#issuecomment-2275418065) of solution being provided.
+Please check [https://github.com/honojs/hono/issue/3242#issuecomment-2275418065](https://github.com/honojs/hono/issue/3242#issuecomment-2275418065) of solution being provided.
 
 > **Not working**
 
@@ -26,7 +26,7 @@ To clone:
 
 ```sh
 git clone https://github.com/rjoydip/oss-issue-solving/git
-cd oss-issue-solving/hono/@issues/3242
+cd oss-issue-solving/hono/3242
 ```
 
 To install dependencies:
