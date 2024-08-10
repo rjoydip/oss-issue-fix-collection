@@ -4,7 +4,8 @@
 
 ## Solution
 
-Provided solution here [3238#issuecomment-2278379005](https://github.com/honojs/hono/3238#issuecomment-2278379005)
+Provided solution here
+[3238#issuecomment-2278379005](https://github.com/honojs/hono/3238#issuecomment-2278379005)
 
 ```diff
 app.use(
