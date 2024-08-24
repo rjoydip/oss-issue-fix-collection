@@ -1,0 +1,15 @@
+{
+  "name": "1276209554279108745",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.1",
+    "@hono/zod-validator": "^0.2.2",
+    "hono": "^4.5.8",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
