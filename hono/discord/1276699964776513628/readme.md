@@ -1,4 +1,4 @@
-# @hono/discord-1276699964776513628
+# @hono/discord/problem-1276699964776513628
 
 [https://discord.com/channels/1011308539819597844/1276699964776513628](https://discord.com/channels/1011308539819597844/1276699964776513628)
 
@@ -29,8 +29,8 @@ app.get('/', (c): TypedResponse<Response<string>, 200> => {
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-solving/git
-cd oss-issue-solving/hono/discord/1276699964776513628
+git clone https://github.com/rjoydip/oss-issue-fix-collection/git
+cd oss-issue-fix-collection/hono/discord/1276699964776513628
 ```
 
 To run:

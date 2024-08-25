@@ -1,5 +1,5 @@
 {
-	"name": "client",
+	"name": "@hono/github/issue-3275/client",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {

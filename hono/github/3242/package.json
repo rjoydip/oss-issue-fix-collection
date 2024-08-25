@@ -1,5 +1,5 @@
 {
-  "name": "@hono/issues-3242",
+  "name": "@hono/github/issues-3242",
   "scripts": {
     "dev": "bun run --hot src/index.ts"
   },

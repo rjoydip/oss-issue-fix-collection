@@ -12,8 +12,8 @@ Provided comment here
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-solving/git
-cd oss-issue-solving/neverthrow/564
+git clone https://github.com/rjoydip/oss-issue-fix-collection/git
+cd oss-issue-fix-collection/neverthrow/564
 ```
 
 To test:

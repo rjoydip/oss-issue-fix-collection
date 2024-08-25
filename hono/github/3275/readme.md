@@ -1,11 +1,13 @@
-# @hono/issue-3275
+# @hono/github/issue-3275
 
 [https://github.com/honojs/hono/3275](https://github.com/honojs/hono/3275)
 
 ## Solution
 
 Provided solution here
-[3275#issuecomment-2294830487](https://github.com/honojs/hono/issues/3275#issuecomment-2294830487)
+[https://github.com/honojs/hono/issues/3275#issuecomment-2294830487](https://github.com/honojs/hono/issues/3275#issuecomment-2294830487)
+
+Actual typo is [https://github.com/honojs/hono/issues/3275#issuecomment-2295853901](https://github.com/honojs/hono/issues/3275#issuecomment-2295853901)
 
 ```ts
 define: {
@@ -18,8 +20,8 @@ define: {
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-solving/git
-cd oss-issue-solving/hono/3275
+git clone https://github.com/rjoydip/oss-issue-fix-collection/git
+cd oss-issue-fix-collection/hono/github/3275
 ```
 
 To install server deps

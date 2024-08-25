@@ -1,11 +1,11 @@
-# @hono/issue-3254
+# @hono/github/issue-3254
 
 [https://github.com/honojs/hono/3254](https://github.com/honojs/hono/3254)
 
 ## Solution
 
 Provided solution here
-[3254#issuecomment-2279494130](https://github.com/honojs/hono/issues/3254#issuecomment-2279494130)
+[https://github.com/honojs/hono/issues/3254#issuecomment-22794941300](https://github.com/honojs/hono/issues/3254#issuecomment-2279494130)
 
 ```ts
 app.get("/slice/:acct", (c) => c.text(`acct is ${c.req.param("acct").slice(1)}`));
@@ -18,8 +18,8 @@ app.get("/regex/slice/:acct{@.+}", (c) =>  c.text(`acct is ${c.req.param("acct")
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-solving/git
-cd oss-issue-solving/hono/3254
+git clone https://github.com/rjoydip/oss-issue-fix-collection/git
+cd oss-issue-fix-collection/hono/github/3254
 ```
 
 To run:

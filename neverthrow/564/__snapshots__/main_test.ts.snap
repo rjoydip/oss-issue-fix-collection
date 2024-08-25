@@ -22,9 +22,9 @@ Ok {
 snapshot[`testIsPromiseAllOK 1`] = `
 Err {
   error: Error: Promise all error
-    at file:///C:/Users/rjoydip/codebase/oss-issue-solving/neverthrow/564/main.ts:8:56
+    at file:///C:/Users/rjoydip/codebase/oss-issue-fix-collection/neverthrow/564/main.ts:8:56
     at file:///C:/Users/rjoydip/AppData/Local/deno/npm/registry.npmjs.org/neverthrow/7.0.1/dist/index.cjs.js:100:35
-    at async file:///C:/Users/rjoydip/codebase/oss-issue-solving/neverthrow/564/main_test.ts:15:18
+    at async file:///C:/Users/rjoydip/codebase/oss-issue-fix-collection/neverthrow/564/main_test.ts:15:18
     at async innerWrapped (ext:cli/40_test.js:191:5)
     at async exitSanitizer (ext:cli/40_test.js:107:27)
     at async outerWrapped (ext:cli/40_test.js:134:14),

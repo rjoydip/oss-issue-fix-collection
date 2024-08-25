@@ -1,11 +1,11 @@
-# @hono/issue-3238
+# @hono/github/issue-3238
 
 [https://github.com/honojs/hono/3238](https://github.com/honojs/hono/3238)
 
 ## Solution
 
 Provided solution here
-[3238#issuecomment-2278379005](https://github.com/honojs/hono/3238#issuecomment-2278379005)
+[https://github.com/honojs/hono/3238#issuecomment-2278379005](https://github.com/honojs/hono/3238#issuecomment-2278379005)
 
 ```diff
 app.use(
@@ -24,8 +24,8 @@ app.use(
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-solving/git
-cd oss-issue-solving/hono/3238
+git clone https://github.com/rjoydip/oss-issue-fix-collection/git
+cd oss-issue-fix-collection/hono/github/3238
 ```
 
 To test:

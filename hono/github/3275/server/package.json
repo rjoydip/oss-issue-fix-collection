@@ -1,5 +1,5 @@
 {
-    "name": "server",
+    "name": "@hono/github/issue-3275/server",
     "type": "module",
     "scripts": {
         "start": "vercel dev",

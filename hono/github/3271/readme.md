@@ -1,4 +1,4 @@
-# @hono/issue-3271
+# @hono/github/issue-3271
 
 [https://github.com/honojs/hono/issue/3271](https://github.com/honojs/hono/issue/3271)
 
@@ -31,8 +31,8 @@ app.use(async (_, next) => {
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-solving/git
-cd oss-issue-solving/hono/3271
+git clone https://github.com/rjoydip/oss-issue-fix-collection/git
+cd oss-issue-fix-collection/hono/github/3271
 ```
 
 To install dependencies:
