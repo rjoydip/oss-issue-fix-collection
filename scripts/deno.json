@@ -1,0 +1,6 @@
+{
+    "imports": {},
+    "tasks": {
+        "dev": "deno run run-test.ts"
+    }
+}

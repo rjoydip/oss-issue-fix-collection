@@ -19,5 +19,5 @@ cd oss-issue-fix-collection/neverthrow/564
 To test:
 
 ```sh
-deno test --allow-read --allow-write -- --update
+deno run test
 ```
