@@ -35,6 +35,7 @@ The hono repository issue reproduce and solutions.
 
 - [@hono/discord/1276209554279108745](./hono/discord/1276209554279108745/)
 - [@hono/discord/1276699964776513628](./hono/discord/1276699964776513628/)
+- [@hono/discord/1275791703797927959](./hono/discord/1275791703797927959/)
 
 ## Neverthrow
 
