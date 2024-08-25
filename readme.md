@@ -16,6 +16,7 @@ The hono repository issue reproduce and solutions.
 - @hono/issue-3254 - [Code](./hono/3254/)
 - @hono/issue-3271 - [Code](./hono/3271/)
 - @hono/issue-3275 - [Code](./hono/3275/)
+- @hono/discord/1276699964776513628 - [Code](./hono/discord/1276699964776513628/)
 
 ### neverthrow
 
