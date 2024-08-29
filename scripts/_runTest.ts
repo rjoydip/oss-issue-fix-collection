@@ -37,26 +37,40 @@ const mapper: {
   },
 };
 
+async function installPackages(cmd: stirng[], dir: stirng) {
+  if(!dir) throw new Error("Directory is missing");
+  if(!cmd) throw new Error("Install command is missing");
+  
+  const proc = spawn(cmd, {
+    cwd: dir.replaceAll("\\", sep),
+  });
+  const output = await new Response(proc.stdout).text();
+  proc.kill;
+  return output
+}
+
+async function testExecution(cmd: stirng[], dir: stirng) {
+  if(!dir) throw new Error("Directory is missing");
+  if(!cmd) throw new Error("Test command is missing");
+  
+  const proc = spawn(cmd, {
+    cwd: dir.replaceAll("\\", sep),
+  });
+  const output = await new Response(proc.stdout).text();
+  proc.kill;
+  return output
+}
+
 for await (const file of files) {
   const { base, dir } = parse(file);
   const { name = "node", runtime = "node" } = mapper[base];
   try {
-    let cmd: string[] = [];
-    if (runtime === "bun") {
-      cmd = [runtime, "test"];
-    } else {
-      if (name == "yarn" || name == "pnpm") {
-        cmd = [name, "test"];
-      } else {
-        cmd = ["npm", "test"];
-      }
-    }
-    const proc = spawn(cmd, {
-      cwd: dir.replaceAll("\\", sep),
-    });
-    const text = await new Response(proc.stdout).text();
-    console.log(text);
-    proc.kill;
+    // Install Packages
+    const installOutput = await installPackages([name, "install"],  dir);
+    console.log(installOutput);
+    // Execute Test
+    const testOutput = await testExecution([name, "test"], dir);
+    console.log(testOutput);
   } catch (err: any) {
     console.log(`Failed with code ${err.exitCode}`);
     console.log(err.stdout.toString());
