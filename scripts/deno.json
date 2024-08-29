@@ -1,6 +1,9 @@
 {
-    "imports": {},
-    "tasks": {
-        "dev": "deno run run-test.ts"
-    }
+  "exclude": ["_runTest.ts"],
+  "imports": {
+    "@std/fs": "jsr:@std/fs@^1.0.2",
+    "@std/path": "jsr:@std/path@^1.0.3",
+    "@types/node": "npm:@types/node@^22.5.1",
+    "zx": "npm:zx@^8.1.5"
+  }
 }

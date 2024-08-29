@@ -6,15 +6,11 @@ import { z } from 'zod';
 const http = new Hono<{ Bindings: HttpBindings }>();
 
 http.post('/example', zValidator('query', z.object({ name: z.string() })), async (c) => {
-  // await new Promise<void>((resolve) => setTimeout(() => resolve(), 1)); // Removing this line prints "Hello" to the console.
+  await new Promise<void>((resolve) => setTimeout(() => resolve(), 1)); // Removing this line prints "Hello" to the console.
 
-  c.env.incoming.pipe(process.stdout);
+  if (c.env && c.env.incoming) c.env.incoming.pipe(process.stdout);
 
-  return c.json({ message: 'Hello, World!' }, 200);
+  return c.json({ message: `Hello, ${c.req.query('name')}!` }, 200);
 });
 
-serve({
-  fetch: http.fetch,
-  hostname: 'localhost',
-  port: 1337,
-});
+export { http }
