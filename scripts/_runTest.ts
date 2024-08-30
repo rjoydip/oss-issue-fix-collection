@@ -1,78 +1,20 @@
-import { Glob, spawn } from "bun";
-import { parse, sep } from "node:path";
+import { dirname } from "jsr:@std/path/dirname";
+import { exec } from "node:child_process";
+import { promisify } from "node:util";
+import { getFiles, testPattern } from "./utils.ts";
 
-const glob = new Glob("**/{runtime-*}/**/*{bun,pnpm-lock}.{lock,yaml}*");
-const files = glob.scan({
-  cwd: ".",
-  absolute: false,
-  onlyFiles: true,
-});
+const exca = promisify(exec);
 
-const mapper: {
-  [key: string]: {
-    name: "bun" | "node" | "pnpm" | "yarn";
-    runtime: "bun" | "node";
-    config: "package.json";
-  };
-} = {
-  "bun.lockb": {
-    name: "bun",
-    runtime: "bun",
-    config: "package.json",
-  },
-  "yarn.lock": {
-    name: "yarn",
-    runtime: "node",
-    config: "package.json",
-  },
-  "pnpm-lock.yaml": {
-    name: "pnpm",
-    runtime: "node",
-    config: "package.json",
-  },
-  "package-lock.yaml": {
-    name: "node",
-    runtime: "node",
-    config: "package.json",
-  },
-};
-
-async function installPackages(cmd: stirng[], dir: stirng) {
-  if(!dir) throw new Error("Directory is missing");
-  if(!cmd) throw new Error("Install command is missing");
-  
-  const proc = spawn(cmd, {
-    cwd: dir.replaceAll("\\", sep),
-  });
-  const output = await new Response(proc.stdout).text();
-  proc.kill;
-  return output
-}
-
-async function testExecution(cmd: stirng[], dir: stirng) {
-  if(!dir) throw new Error("Directory is missing");
-  if(!cmd) throw new Error("Test command is missing");
-  
-  const proc = spawn(cmd, {
-    cwd: dir.replaceAll("\\", sep),
-  });
-  const output = await new Response(proc.stdout).text();
-  proc.kill;
-  return output
-}
-
-for await (const file of files) {
-  const { base, dir } = parse(file);
-  const { name = "node", runtime = "node" } = mapper[base];
-  try {
-    // Install Packages
-    const installOutput = await installPackages([name, "install"],  dir);
-    console.log(installOutput);
-    // Execute Test
-    const testOutput = await testExecution([name, "test"], dir);
-    console.log(testOutput);
-  } catch (err: any) {
-    console.log(`Failed with code ${err.exitCode}`);
-    console.log(err.stdout.toString());
+for await (const file of await getFiles(testPattern)
+) {
+  const decoder = new TextDecoder("utf-8");
+  const data = await Deno.readFile(file.path);
+  const content = JSON.parse(decoder.decode(data).toString());
+  const tasks = content["tasks"] || content["scripts"];
+  if (tasks && tasks["test"]) {
+    Deno.chdir(dirname(file.path));
+    const { stdout, stderr } = await exca(tasks["test"]);
+    if (stdout) console.log("stdout:", stdout);
+    if (stderr) console.error("stderr:", stderr);
   }
 }
