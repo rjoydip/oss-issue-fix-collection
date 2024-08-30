@@ -33,6 +33,6 @@ jobs:
           node-version: 20
 
       - name: ⌛ Run Install
-        run: "deno --allow-read --allow-env --allow-run run scripts/_runInstall.ts"
+        run: "deno run --allow-read --allow-env --allow-run scripts/_runInstall.ts"
       - name: 🧪 Run Test
-        run: "deno --allow-read --allow-env --allow-run run scripts/_runTest.ts"
+        run: "deno run --allow-read --allow-env --allow-run scripts/_runTest.ts"
