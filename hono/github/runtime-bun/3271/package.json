@@ -2,12 +2,16 @@
   "name": "@hono/github/issue-3271",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
+    "check": "biome check --write **/*.ts",
+    "format": "biome format --write **/*.ts",
+    "lint": "biome lint --write **/*.ts",
     "test": "bun test"
   },
   "dependencies": {
     "hono": "^4.5.5"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@biomejs/biome": "1.8.3"
   }
 }

@@ -5,8 +5,7 @@ import { getFiles, testPattern } from "./utils.ts";
 
 const exca = promisify(exec);
 
-for await (const file of await getFiles(testPattern)
-) {
+for await (const file of await getFiles(testPattern)) {
   const decoder = new TextDecoder("utf-8");
   const data = await Deno.readFile(file.path);
   const content = JSON.parse(decoder.decode(data).toString());

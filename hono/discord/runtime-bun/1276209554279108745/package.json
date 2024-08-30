@@ -2,6 +2,9 @@
   "name": "1276209554279108745",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
+    "check": "biome check --write **/*.ts",
+    "format": "biome format --write **/*.ts",
+    "lint": "biome lint --write **/*.ts",
     "test": "bun test"
   },
   "dependencies": {
@@ -11,6 +14,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@biomejs/biome": "1.8.3"
   }
 }
