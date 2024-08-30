@@ -7,8 +7,8 @@ on:
     branches: main
 
 jobs:
-  test:
-    name: Run Test
+  verify:
+    name: ☑️ Verify
     runs-on: ubuntu-latest
 
     permissions:
@@ -16,23 +16,23 @@ jobs:
       contents: read
 
     steps:
-      - name: Clone repository
+      - name: ⬇️ Clone repository
         uses: actions/checkout@v3
 
-      - name: Install Deno
+      - name: 🟢 Install Deno
         uses: denoland/setup-deno@v1
         with:
           deno-version: v1.x
 
-      - name: Install Bun
+      - name: 🟢 Install Bun
         uses: oven-sh/setup-bun@v2
 
-      - name: Install Node
+      - name: 🟢 Install Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Run install
-        run: "deno -A run scripts/_runInstall.ts"
-      - name: Run test
-        run: "deno -A run scripts/_runTest.ts"
+      - name: ⌛ Run Install
+        run: "deno --allow-read --allow-env --allow-run run scripts/_runInstall.ts"
+      - name: 🧪 Run Test
+        run: "deno --allow-read --allow-env --allow-run run scripts/_runTest.ts"
