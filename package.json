@@ -1,0 +1,17 @@
+{
+  "name": "oss-issue-solving",
+  "version": "0.0.0",
+  "description": "This repository contains issue resolving.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "deno/*",
+    "hono/*",
+    "scripts/*",
+    "neverthrow/*"
+  ],
+  "keywords": [],
+  "author": "rjoydip",
+  "license": "MIT"
+}

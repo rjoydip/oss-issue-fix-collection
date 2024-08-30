@@ -1,4 +1,4 @@
-import { assertSnapshot } from "jsr:@std/testing@1.0.0/snapshot";
+import { assertSnapshot } from "@std/testing/snapshot";
 import { isPromiseAllOK, isPromiseAllSettledOK } from "./main.ts";
 
 Deno.test("testIsPromiseAllSettledOK", async function (t):  Promise<void> {

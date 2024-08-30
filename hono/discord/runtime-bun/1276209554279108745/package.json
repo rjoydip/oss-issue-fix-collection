@@ -1,7 +1,8 @@
 {
   "name": "1276209554279108745",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "test": "bun test"
   },
   "dependencies": {
     "@hono/node-server": "^1.12.1",

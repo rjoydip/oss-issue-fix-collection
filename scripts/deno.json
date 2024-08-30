@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "@std/fs": "jsr:@std/fs@^1.0.2",
+    "@std/path": "jsr:@std/path@^1.0.3",
+    "@types/node": "npm:@types/node@^22.5.1",
+    "nypm": "npm:nypm@^0.3.11"
+  }
+}
