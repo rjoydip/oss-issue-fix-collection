@@ -1,0 +1,50 @@
+import { dirname } from "jsr:@std/path/dirname";
+import { exec } from "node:child_process";
+import { promisify } from "node:util";
+import { getFiles, configPattern, runtimeMapper, isYarn, isPnm } from "./utils.ts";
+import { Output } from "./types.ts";
+import { Agent } from "./types.ts";
+
+const exca = promisify(exec);
+const getCmd = async (agent: Agent, cwd: string, cmd: { lint: string }) => `${agent === 'node' ? await isPnm(cwd) ? 'pnpm run' : await isYarn(cwd) ? 'yarn run' : 'npm run' : agent} ${cmd?.lint || 'lint'}`
+
+for await (const file of await getFiles(configPattern)) {
+    const { name, path } = file;
+    const { agent, cmd = { lint: 'lint' } } = runtimeMapper[name]
+    const cwd = dirname(path)
+
+    let outputs: Output[] = []
+    if (typeof agent === 'string') {
+        const $cmd = await getCmd(agent, cwd, cmd)
+        const { stderr, stdout } = await exca($cmd, {
+            cwd,
+        });
+        outputs.push({
+            stderr,
+            stdout
+        })
+    } else {
+        outputs = await Promise.all(agent.map(async (ag) => {
+            const $cmd = await getCmd(ag, cwd, cmd)
+            if (path.includes(ag)) {
+                console.log(path);
+                const { stderr, stdout } = await exca($cmd, {
+                    cwd,
+                });
+                return { stderr, stdout }
+            } else {
+                return {
+                    stderr: '',
+                    stdout: ''
+                }
+            }
+        }))
+    }
+
+    outputs
+        .filter(i => i.stderr && i.stdout)
+        .map(({ stdout, stderr }) => {
+            if (stdout) console.log("stdout:", stdout);
+            if (stderr && !stderr.includes('$')) console.error("stderr:", stderr);
+        })
+}

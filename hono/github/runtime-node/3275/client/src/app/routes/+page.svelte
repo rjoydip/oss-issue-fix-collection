@@ -2,31 +2,30 @@
 	import { Button } from '$front/components/ui/button/index.js';
 
 	import { hc } from 'hono/client';
-	import{ type ApiTestRoutes} from '../../../../server/api/index'
+	import { type ApiTestRoutes } from '../../../../server/api/index';
 
 	const fetchPricing = async (selectedRegion: string, startUtcDate: string, endUtcDate: string) => {
 		console.log('getPricing: ', selectedRegion, startUtcDate, endUtcDate);
 
-
 		try {
-
 			const dataClient = hc<ApiTestRoutes>('/');
 			const api = dataClient.api;
-			const res = await api.pricing.$post({json:{
-				countryCode: selectedRegion,
-				startDateUtc: startUtcDate,
-				endDateUtc: endUtcDate
-			}});		
+			const res = await api.pricing.$post({
+				json: {
+					countryCode: selectedRegion,
+					startDateUtc: startUtcDate,
+					endDateUtc: endUtcDate
+				}
+			});
 
-			if (!res.ok) {				
+			if (!res.ok) {
 				const errorText = 'Request failed: ' + res.statusText;
 				console.error('Error:', errorText);
 				return;
 			}
 
-			const result = await res.json();			
-			console.log("Request successful: " );
-			
+			const result = await res.json();
+			console.log('Request successful: ');
 		} catch (error) {
 			console.error('There was a problem with the fetch operation:', error);
 		}

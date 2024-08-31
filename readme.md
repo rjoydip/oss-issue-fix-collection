@@ -1,5 +1,12 @@
 # oss-issue-fix-collection
 
+![deno compatibility](https://shield.deno.dev/deno/latest)
+![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat)
+![Bun Badge](https://img.shields.io/badge/Bun-000?logo=bun&logoColor=F9F1E1&style=flat)
+![Node.js Badge](https://img.shields.io/badge/Node.js-5FA04E?logo=nodedotjs&logoColor=fff&style=flat)
+[![Formatted with Biome](https://img.shields.io/badge/Biome-latest-60a5fa?style=flat&logo=biome)](https://biomejs.dev/)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+
 This repository contains issue resolving.
 
 ## Table of contains
