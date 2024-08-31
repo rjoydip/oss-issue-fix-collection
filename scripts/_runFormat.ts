@@ -25,7 +25,6 @@ for await (const file of await getFiles(configPattern)) {
         })
     } else {
         outputs = await Promise.all(agent.map(async (ag) => {
-            console.log(">>>", path);
             const $cmd = await getCmd(ag, cwd, cmd)
             if (path.includes(ag)) {
                 const { stderr, stdout } = await exca($cmd, {
