@@ -48,9 +48,9 @@ jobs:
 
       - name: ✍ Run Linter
         run: |
-          deno run --allow-read --allow-env --allow-run scripts/_runFormat.ts
-          deno run --allow-read --allow-env --allow-run scripts/_runCheck.ts
-          deno run --allow-read --allow-env --allow-run scripts/_runLint.ts
+          deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runFormat.ts
+          deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runCheck.ts
+          deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runLint.ts
 
       - name: 🧪 Run Test
         run: deno run --allow-read --allow-env --allow-run scripts/_runTest.ts

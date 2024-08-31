@@ -1,12 +1,12 @@
 import { dirname } from "jsr:@std/path/dirname";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
-import { getFiles, configPattern, runtimeMapper, isYarn, isPnm } from "./utils.ts";
+import { getFiles, configPattern, runtimeMapper, isYarn, isPnpm } from "./utils.ts";
 import { Output } from "./types.ts";
 import { Agent } from "./types.ts";
 
 const exca = promisify(exec);
-const getCmd = async (agent: Agent, cwd: string, cmd: { check: string }) => `${agent === 'node' ? await isPnm(cwd) ? 'pnpm run' : await isYarn(cwd) ? 'yarn run' : 'npm run' : agent} ${cmd?.check || 'check'}`
+const getCmd = async (agent: Agent, cwd: string, cmd: { check: string }) => `${agent === 'node' ? await isPnpm(cwd) ? 'pnpm run' : await isYarn(cwd) ? 'yarn run' : 'npm run' : agent} ${cmd?.check || 'check'}`
 
 for await (const file of await getFiles(configPattern)) {
     const { name, path } = file;

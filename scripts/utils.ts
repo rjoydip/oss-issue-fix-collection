@@ -11,14 +11,16 @@ export const runtimeMapper: RuntimeMapper = {
     agent: ["bun", "node"],
     cmd: {
       "fmt": "format",
-      "check": "check"
+      "check": "check",
+      "lint": "lint"
     }
   },
   "deno.json": {
     agent: "deno",
     cmd: {
       fmt: "fmt",
-      "check": "check **/*.ts"
+      "check": "check **/*.ts",
+      "lint": "lint"
     }
   },
 };
@@ -49,5 +51,5 @@ export const getFiles = async (pattern: string) => {
   );
 };
 
-export const isPnm = async (cwd: string) => await exists(join(cwd, 'pnpm-lock.yaml'))
+export const isPnpm = async (cwd: string) => await exists(join(cwd, 'pnpm-lock.yaml'))
 export const isYarn = async (cwd: string) => await exists(join(cwd, 'yarn.lock'))

@@ -1,12 +1,12 @@
 import { dirname } from "jsr:@std/path/dirname";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
-import { getFiles, configPattern, runtimeMapper, isYarn, isPnm } from "./utils.ts";
+import { getFiles, configPattern, runtimeMapper, isYarn, isPnpm } from "./utils.ts";
 import { Output } from "./types.ts";
 import { Agent } from "./types.ts";
 
 const exca = promisify(exec);
-const getCmd = async (agent: Agent, cwd: string, cmd: { fmt: string }) => `${agent === 'node' ? await isPnm(cwd) ? 'pnpm run' : await isYarn(cwd) ? 'yarn run' : 'npm run' : agent} ${cmd?.fmt || 'format'}`
+const getCmd = async (agent: Agent, cwd: string, cmd: { fmt: string }) => `${agent === 'node' ? await isPnpm(cwd) ? 'pnpm run' : await isYarn(cwd) ? 'yarn run' : 'npm run' : agent} ${cmd?.fmt || 'format'}`
 
 for await (const file of await getFiles(configPattern)) {
     const { name, path } = file;
@@ -25,6 +25,7 @@ for await (const file of await getFiles(configPattern)) {
         })
     } else {
         outputs = await Promise.all(agent.map(async (ag) => {
+            console.log(">>>", path);
             const $cmd = await getCmd(ag, cwd, cmd)
             if (path.includes(ag)) {
                 const { stderr, stdout } = await exca($cmd, {
