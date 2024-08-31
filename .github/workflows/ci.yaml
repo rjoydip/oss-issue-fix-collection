@@ -42,6 +42,14 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          
+      - name: 🟢 Install Pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: 🟢 Install Yarn
+        run: npm install -g yarn
 
       - name: ⌛ Run Install
         run: deno run --allow-read --allow-env --allow-run scripts/_runInstall.ts
