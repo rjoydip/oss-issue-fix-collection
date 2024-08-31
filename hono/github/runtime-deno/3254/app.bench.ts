@@ -25,9 +25,9 @@ Deno.bench({
 });
 
 Deno.bench({
-    name: "/regex/slice/:acct{@.+}",
-    group: "routing",
-    fn: async () => {
-      await app.request("http://localhost/regex/slice/@alex");
-    },
-  });
+  name: "/regex/slice/:acct{@.+}",
+  group: "routing",
+  fn: async () => {
+    await app.request("http://localhost/regex/slice/@alex");
+  },
+});

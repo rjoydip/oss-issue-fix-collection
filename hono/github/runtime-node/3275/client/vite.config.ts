@@ -7,6 +7,6 @@ export default defineConfig({
 		port: 5001
 	},
 	define: {
-		global: 'globalThis',
-	},
+		global: 'globalThis'
+	}
 });

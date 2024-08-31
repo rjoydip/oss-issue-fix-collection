@@ -1,9 +1,15 @@
 {
-  "name": "@hono/github/issues-3242",
-  "scripts": {
-    "dev": "bun run --hot src/index.ts"
-  },
-  "dependencies": {
-    "hono": "^4.5.4"
-  }
+	"name": "@hono/github/issues-3242",
+	"scripts": {
+		"dev": "bun run --hot src/index.ts",
+		"check": "bunx biome check --write .",
+		"format": "bunx biome format --write .",
+		"lint": "bunx biome lint --write ."
+	},
+	"dependencies": {
+		"hono": "^4.5.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3"
+	}
 }

@@ -7,6 +7,17 @@ on:
     branches: main
 
 jobs:
+  pr-checker:
+    name: 🔃 PR Checker
+    runs-on: ubuntu-latest
+    if: github.actor != 'dependabot[bot]'
+    steps:
+      - uses: thehanimo/pr-title-checker@v1.4.0
+        with:
+          pass_on_octokit_error: false
+          configuration_path: .github/pr-checker.json
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
   verify:
     name: ☑️ Verify
     runs-on: ubuntu-latest
@@ -31,8 +42,24 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          
+      - name: 🟢 Install Pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: 🟢 Install Yarn
+        run: npm install -g yarn
 
       - name: ⌛ Run Install
-        run: "deno run --allow-read --allow-env --allow-run scripts/_runInstall.ts"
+        run: deno run --allow-read --allow-env --allow-run scripts/_runInstall.ts
+
+      - name: ✍ Run Linter
+        run: |
+          deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runFormat.ts
+          deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runCheck.ts
+          deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runLint.ts
+
       - name: 🧪 Run Test
-        run: "deno run --allow-read --allow-env --allow-run scripts/_runTest.ts"
+        run: deno run --allow-read --allow-env --allow-run scripts/_runTest.ts
+  

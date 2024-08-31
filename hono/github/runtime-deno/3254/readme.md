@@ -8,9 +8,15 @@ Provided solution here
 [https://github.com/honojs/hono/issues/3254#issuecomment-22794941300](https://github.com/honojs/hono/issues/3254#issuecomment-2279494130)
 
 ```ts
-app.get("/slice/:acct", (c) => c.text(`acct is ${c.req.param("acct").slice(1)}`));
+app.get(
+  "/slice/:acct",
+  (c) => c.text(`acct is ${c.req.param("acct").slice(1)}`),
+);
 // or
-app.get("/regex/slice/:acct{@.+}", (c) =>  c.text(`acct is ${c.req.param("acct").slice(1)}`));
+app.get(
+  "/regex/slice/:acct{@.+}",
+  (c) => c.text(`acct is ${c.req.param("acct").slice(1)}`),
+);
 ```
 
 ## Setup

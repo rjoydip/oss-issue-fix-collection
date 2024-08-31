@@ -1,17 +1,21 @@
 {
-  "name": "@hono/github/issue-3275/server",
-  "type": "module",
-  "scripts": {
-    "start": "vercel dev",
-    "deploy": "vercel",
-    "test": "echo \"No test specified\""
-  },
-  "dependencies": {
-    "@hono/node-server": "^1.12.0",
-    "hono": "^4.5.5"
-  },
-  "devDependencies": {
-    "next": "^14.2.5",
-    "vercel": "^32.4.1"
-  }
+	"name": "@hono/github/issue-3275/server",
+	"type": "module",
+	"scripts": {
+		"start": "vercel dev",
+		"deploy": "vercel",
+		"check": "biome check --write .",
+		"format": "biome format --write .",
+		"lint": "biome lint --write .",
+		"test": "echo \"No test specified\""
+	},
+	"dependencies": {
+		"@hono/node-server": "^1.12.0",
+		"hono": "^4.5.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.3",
+		"next": "^14.2.5",
+		"vercel": "^32.4.1"
+	}
 }
