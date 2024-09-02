@@ -3,8 +3,8 @@ import { exists } from "jsr:@std/fs/exists";
 import { join } from "@std/path/join";
 import { RuntimeMapper, PackageMapper } from "./types.ts";
 
-export const configPattern = "**/{runtime-*}/**/*{deno,package}.json";
-export const installPattern = "**/{runtime-*}/**/*{bun,pnpm-lock}.{lock,yaml}*";
+export const configPattern = "apps/**/{runtime-*}/**/*{deno,package}.json";
+export const installPattern = "apps/**/{runtime-*}/**/*{bun,pnpm-lock}.{lock,yaml}*";
 
 export const runtimeMapper: RuntimeMapper = {
   "package.json": {

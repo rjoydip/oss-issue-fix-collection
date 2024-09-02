@@ -51,14 +51,17 @@ jobs:
       - name: 🟢 Install Yarn
         run: npm install -g yarn
 
-      - name: ⌛ Run Install
+      - name: ⏳ Run Install
         run: deno run --allow-read --allow-env --allow-run scripts/_runInstall.ts
 
-      - name: ✍ Run Linter
-        run: |
-          deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runFormat.ts
-          deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runCheck.ts
-          deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runLint.ts
+      - name: ☰ Run Linter
+        run: deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runFormat.ts
+      
+      - name: ✅ Run Check
+        run: deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runCheck.ts
+
+      - name: ⚡ Run Linter
+        run: deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runLint.ts
 
       - name: 🧪 Run Test
         run: deno run --allow-read --allow-env --allow-run scripts/_runTest.ts

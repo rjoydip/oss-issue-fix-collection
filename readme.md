@@ -7,7 +7,7 @@
 [![Formatted with Biome](https://img.shields.io/badge/Biome-latest-60a5fa?style=flat&logo=biome)](https://biomejs.dev/)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
-This repository contains issue resolving.
+rjoydip open source issue fixing collection.
 
 ## Table of contains
 
