@@ -1,15 +1,11 @@
 {
-  "name": "oss-issue-solving",
+  "name": "oss-issue-fix-collection",
   "version": "0.0.0",
-  "description": "This repository contains issue resolving.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "rjoydip open source issue fixing collection",
   "workspaces": [
-    "deno/*",
-    "hono/*",
-    "scripts/*",
-    "neverthrow/*"
+    "apps/*",
+    "docs/*",
+    "scripts/*"
   ],
   "keywords": [],
   "author": "rjoydip",
