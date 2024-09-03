@@ -62,8 +62,10 @@ jobs:
 
       - name: 📜 Generate Docs
         run: |
-          deno doc --html scripts/**/*.ts
-          deno run --allow-read --allow-env --allow-run scripts/gen/doc.ts
+          cd scripts
+          deno doc --html **/*.ts
+          deno run --allow-read --allow-env --allow-run gen/doc.ts
+          cd ..
 
       - name: ⏳ Run Install
         run: deno run --allow-read --allow-env --allow-run scripts/run/install.ts
