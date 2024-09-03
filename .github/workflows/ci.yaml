@@ -101,8 +101,8 @@ jobs:
         with:
           path: ./docs/_site
 
-  # Deployment job
   deploy:
+    name: 🚀 Deploy
     permissions:
       pages: write
       id-token: write
@@ -114,6 +114,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: 🚀 Deploy to GitHub Pages
+      - name: </> Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
