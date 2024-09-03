@@ -41,8 +41,6 @@ jobs:
 
       - name: 🟢 Install Deno
         uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.x
 
       - name: 🟢 Install Bun
         uses: oven-sh/setup-bun@v2
@@ -93,8 +91,6 @@ jobs:
 
       - name: 🟢 Install Deno
         uses: denoland/setup-deno@v1
-        with:
-          deno-version: v1.37.1 
       
       - name: 📝 Build Docs
         run: deno task lume
