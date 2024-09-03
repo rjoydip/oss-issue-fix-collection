@@ -28,6 +28,14 @@ const site = lume(
   { markdown },
 );
 
+site.remoteFile("styles/main.css", "https://cdn.jsdelivr.net/gh/rjoydip/oss-issue-fix-collection@b02de94a901c9375a5ae1ec9eb9459b3e1c8d7c1/docs/styles/main.css")
+site.remoteFile("styles/pages/landing.css", "https://github.com/rjoydip/oss-issue-fix-collection/blob/b02de94a901c9375a5ae1ec9eb9459b3e1c8d7c1/docs/styles/pages/landing.css")
+site.remoteFile("main.js", "https://github.com/rjoydip/oss-issue-fix-collection/blob/b02de94a901c9375a5ae1ec9eb9459b3e1c8d7c1/docs/main.js")
+
+site.remoteFile("fonts/inter.woff2", "https://github.com/rjoydip/oss-issue-fix-collection/blob/b02de94a901c9375a5ae1ec9eb9459b3e1c8d7c1/docs/fonts/inter.woff2")
+site.remoteFile("fonts/epilogue.woff2", "https://github.com/rjoydip/oss-issue-fix-collection/blob/b02de94a901c9375a5ae1ec9eb9459b3e1c8d7c1/docs/fonts/epilogue.woff2")
+site.remoteFile("fonts/jetbrains-mono.woff2", "https://github.com/rjoydip/oss-issue-fix-collection/blob/b02de94a901c9375a5ae1ec9eb9459b3e1c8d7c1/docs/fonts/jetbrains-mono.woff2")
+
 site
   .ignore("scripts")
   .copy("static", ".")
