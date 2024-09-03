@@ -15,8 +15,9 @@ export type RuntimeMapper = {
     [key: string]: {
         agent: Agent[] | Agent;
         cmd?: {
-            fmt: string,
             check: string,
+            doc: string,
+            fmt: string,
             lint: string
         }
     };

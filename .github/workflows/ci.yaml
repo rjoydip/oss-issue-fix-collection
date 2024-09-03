@@ -6,6 +6,15 @@ on:
   pull_request:
     branches: main
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   pr-checker:
     name: 🔃 PR Checker
@@ -23,6 +32,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      contents: read
       id-token: write
       contents: read
 
@@ -51,18 +61,62 @@ jobs:
       - name: 🟢 Install Yarn
         run: npm install -g yarn
 
+      - name: 📜 Generate Docs
+        run: |
+          deno doc --html scripts/**/*.ts
+          deno run --allow-read --allow-env --allow-run scripts/gen/doc.ts
+
       - name: ⏳ Run Install
-        run: deno run --allow-read --allow-env --allow-run scripts/_runInstall.ts
+        run: deno run --allow-read --allow-env --allow-run scripts/run/install.ts
 
       - name: ☰ Run Linter
-        run: deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runFormat.ts
+        run: deno run --allow-read --allow-env --allow-run --allow-sys scripts/run/format.ts
       
       - name: ✅ Run Check
-        run: deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runCheck.ts
+        run: deno run --allow-read --allow-env --allow-run --allow-sys scripts/run/check.ts
 
       - name: ⚡ Run Linter
-        run: deno run --allow-read --allow-env --allow-run --allow-sys scripts/_runLint.ts
+        run: deno run --allow-read --allow-env --allow-run --allow-sys scripts/run/lint.ts
 
       - name: 🧪 Run Test
-        run: deno run --allow-read --allow-env --allow-run scripts/_runTest.ts
-  
+        run: deno run --allow-read --allow-env --allow-run scripts/run/test.ts
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ✅ Checkout
+        uses: actions/checkout@v3
+
+      - name: 🗐 Setup Pages
+        uses: actions/configure-pages@v3
+
+      - name: 🟢 Install Deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.37.1 
+      
+      - name: 📝 Build Docs
+        run: deno task lume
+        working-directory: ./docs
+
+      - name: 📤 Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./docs/_site
+
+  # Deployment job
+  deploy:
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

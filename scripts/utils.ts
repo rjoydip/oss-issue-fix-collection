@@ -5,21 +5,24 @@ import { RuntimeMapper, PackageMapper } from "./types.ts";
 
 export const configPattern = "apps/**/{runtime-*}/**/*{deno,package}.json";
 export const installPattern = "apps/**/{runtime-*}/**/*{bun,pnpm-lock}.{lock,yaml}*";
+export const denoPattern = "apps/**/runtime-deno/**/*deno.json";
 
 export const runtimeMapper: RuntimeMapper = {
   "package.json": {
     agent: ["bun", "node"],
     cmd: {
-      "fmt": "format",
       "check": "check",
+      "doc": "doc",
+      "fmt": "format",
       "lint": "lint"
     }
   },
   "deno.json": {
     agent: "deno",
     cmd: {
-      fmt: "fmt",
       "check": "check **/*.ts",
+      "doc": "doc --html **/*.ts",
+      fmt: "fmt",
       "lint": "lint"
     }
   },

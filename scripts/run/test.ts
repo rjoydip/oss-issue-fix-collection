@@ -1,7 +1,7 @@
 import { dirname } from "jsr:@std/path/dirname";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
-import { getFiles, configPattern } from "./utils.ts";
+import { getFiles, configPattern } from "../utils.ts";
 
 const exca = promisify(exec);
 
