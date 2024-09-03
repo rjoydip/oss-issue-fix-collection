@@ -61,7 +61,7 @@ jobs:
         run: npm install -g yarn
 
       - name: 🧹 Cleanup
-        run: deno run --allow-read --allow-write scripts/clean/doc.ts
+        run: deno run --allow-read --allow-write scripts/clean/docs.ts
 
       - name: ⏳ Run Install
         run: deno run --allow-read --allow-env --allow-run scripts/run/install.ts
@@ -107,7 +107,7 @@ jobs:
   # Deployment job
   deploy:
     permissions:
-      pages: write      # to deploy to Pages
+      pages: write
       id-token: write
 
     environment:
