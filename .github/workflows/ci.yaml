@@ -17,7 +17,7 @@ concurrency:
 
 jobs:
   pr-checker:
-    name: 🔃 PR Checker
+    name: 🔃 PR
     runs-on: ubuntu-latest
     if: github.actor != 'dependabot[bot]'
     steps:
@@ -82,6 +82,7 @@ jobs:
         run: deno run --allow-read --allow-env --allow-run scripts/gen/doc.ts
 
   build:
+    name: 🏗️ Build
     runs-on: ubuntu-latest
     steps:
       - name: ✅ Checkout
