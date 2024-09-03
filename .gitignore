@@ -173,3 +173,11 @@ dist
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# lume
+_site
+_cache
+
+# Custom
+apps/**/docs
+scripts/docs

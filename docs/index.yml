@@ -1,0 +1,130 @@
+layout: layouts/landing.vto
+title: OICF, open source issue fixing collection
+description: The repository open source issue fixing collection.
+header:
+  title: The repository <span>open source issue fixing</span> collection
+
+install:
+  title: "Run the following to setup"
+  code: git clone https://github.com/rjoydip/oss-issue-fix-collection.git
+  url: https://github.com/rjoydip/oss-issue-fix-collection
+
+usage:
+  - title: Linting
+    description: |
+      Check linting your code
+    code: |
+      <lume-code>
+
+        ```sh { title="npm" }
+        npm run lint
+        ```
+
+        ```sh { title="pnpm" }
+        pnpm lint
+        ```
+
+        ```sh { title="bun" }
+        bun lint
+        ```
+
+        ```sh { title="deno" }
+        deno lint
+        # or
+        deno tasks lint
+        ```
+
+      </lume-code>
+
+  - title: Formatting
+    description: |
+      Format your module code
+    code: |
+      <lume-code>
+
+        ```sh { title="npm" }
+        npm run format
+        ```
+
+        ```sh { title="pnpm" }
+        pnpm format
+        ```
+
+        ```sh { title="bun" }
+        bun format
+        ```
+
+        ```sh { title="deno" }
+        deno fmt
+        # or
+        deno tasks fmt
+        ```
+
+      </lume-code>
+
+  - title: Unit Testing
+    description: |
+      Unit Testing
+    code: |
+      <lume-code>
+
+        ```sh { title="npm" }
+        npm run test
+        ```
+
+        ```sh { title="pnpm" }
+        pnpm test
+        ```
+
+        ```sh { title="bun" }
+        bun test
+        ```
+
+        ```sh { title="deno" }
+        deno test
+        # or
+        deno tasks test
+        ```
+
+      </lume-code>
+
+badges:
+  - name: Deno
+    version: "1.46.x"
+    color: "#141b1f"
+    url: https://deno.com/
+
+  - name: TypeScript
+    color: "#407bbf"
+    version: "5.x.x"
+    url: https://www.typescriptlang.org/
+
+  - name: Bun
+    color: "#fe7d37"
+    version: "1.1.x"
+    url: https://bun.sh/
+
+  - name: Biome
+    color: "#407bbf"
+    version: "1.8.x"
+    url: https://biomejs.dev/
+
+  - name: Node
+    color: "#97ca00"
+    version: "20.16.x"
+    url: https://node.org/
+
+contribute:
+  title: OIFC contributors
+  contributors:
+    - name: Joydip Roy (creator & maintainer)
+      url: https://rjoydip.com/
+      img: https://avatars.githubusercontent.com/u/112172822?s=96&v=4
+
+  guideline:
+    title: How to contribute?
+    description: |
+      - Star the [repo in GitHub](https://github.com/rjoydip/oss-issue-fix-collection).
+      - Fork the repo and [contribute](https://github.com/rjoydip/oss-issue-fix-collection/contributors) fixing bugs or adding new features.
+      - Help to [improve the docs](https://github.com/rjoydip/oss-issue-fix-collection/docs).
+      - Get help and propose ideas [at Discord](https://discord.com/users/rjoydip).

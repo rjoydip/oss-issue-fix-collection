@@ -4,5 +4,20 @@
     "@std/path": "jsr:@std/path@^1.0.3",
     "@types/node": "npm:@types/node@^22.5.1",
     "nypm": "npm:nypm@^0.3.11"
+  },
+  "lint": {
+    "exclude": [
+      "./docs"
+    ],
+    "rules": {
+      "tags": [
+        "recommended"
+      ]
+    }
+  },
+  "fmt": {
+    "exclude": [
+      "./docs"
+    ]
   }
 }

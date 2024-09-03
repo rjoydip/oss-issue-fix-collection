@@ -1,6 +1,6 @@
 import { dirname } from "@std/path/dirname";
 import { installDependencies } from "npm:nypm";
-import { getFiles, installPattern, packageMapper } from "./utils.ts";
+import { getFiles, installPattern, packageMapper } from "../utils.ts";
 
 for await (const file of await getFiles(installPattern)) {
   const { agent } = packageMapper[file.name];
