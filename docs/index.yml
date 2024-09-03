@@ -90,28 +90,28 @@ usage:
 
 badges:
   - name: Deno
-    version: 1.x
+    version: "1.46.x"
     color: "#141b1f"
     url: https://deno.com/
 
   - name: TypeScript
     color: "#407bbf"
-    version: 5.x
+    version: "5.x.x"
     url: https://www.typescriptlang.org/
 
   - name: Bun
     color: "#fe7d37"
-    version: 1.x
+    version: "1.1.x"
     url: https://bun.sh/
 
   - name: Biome
     color: "#407bbf"
-    version: 1.x
+    version: "1.8.x"
     url: https://biomejs.dev/
 
   - name: Node
     color: "#97ca00"
-    version: 18.x
+    version: "20.16.x"
     url: https://node.org/
 
 contribute:
