@@ -1,3 +1,0 @@
-(function () {
-  window.DENO_DOC_SEARCH_INDEX = {"nodes":[{"kind":["function"],"name":"isPromiseAllOK","file":"main.ts","doc":"","location":{"filename":"main.ts","line":10,"col":0,"byteIndex":241},"url":"./main.ts/~/isPromiseAllOK.html","category":"","declarationKind":"export","deprecated":false},{"kind":["function"],"name":"isPromiseAllSettledOK","file":"main.ts","doc":"","location":{"filename":"main.ts","line":3,"col":0,"byteIndex":49},"url":"./main.ts/~/isPromiseAllSettledOK.html","category":"","declarationKind":"export","deprecated":false}]};
-})()

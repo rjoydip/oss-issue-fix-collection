@@ -177,3 +177,7 @@ dist
 # lume
 _site
 _cache
+
+# Custom
+apps/**/docs
+scripts/docs

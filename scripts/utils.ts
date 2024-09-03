@@ -1,11 +1,11 @@
-import { expandGlob } from "@std/fs/expand-glob";
+import { expandGlob, ExpandGlobOptions } from "@std/fs/expand-glob";
 import { exists } from "jsr:@std/fs/exists";
 import { join } from "@std/path/join";
 import { RuntimeMapper, PackageMapper } from "./types.ts";
 
 export const configPattern = "apps/**/{runtime-*}/**/*{deno,package}.json";
 export const installPattern = "apps/**/{runtime-*}/**/*{bun,pnpm-lock}.{lock,yaml}*";
-export const denoPattern = "apps/**/runtime-deno/**/*deno.json";
+export const denoDocsPattern = "{apps,scripts}/**/*deno.json";
 
 export const runtimeMapper: RuntimeMapper = {
   "package.json": {
@@ -43,15 +43,13 @@ export const packageMapper: PackageMapper = {
   },
 };
 
-export const getFiles = async (pattern: string) => {
+export const getFiles = async (pattern: string, option: ExpandGlobOptions = {
+  root: "./",
+  includeDirs: false,
+  exclude: ["**/node_modules", "**/.git"]
+}) => {
   if (!pattern) throw new Error("Pattern missing");
-  return await Array.fromAsync(
-    expandGlob(pattern, {
-      root: "./",
-      exclude: ["**/node_modules/**", "**/.git/**", "**/dist/**"],
-      includeDirs: false,
-    }),
-  );
+  return await Array.fromAsync(expandGlob(pattern, option));
 };
 
 export const isPnpm = async (cwd: string) => await exists(join(cwd, 'pnpm-lock.yaml'))
