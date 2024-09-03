@@ -15,6 +15,11 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   pr-checker:
     name: 🔃 PR
@@ -30,10 +35,6 @@ jobs:
   verify:
     name: ☑️ Verify
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      id-token: write
 
     steps:
       - name: ⬇️ Clone repository
@@ -93,7 +94,7 @@ jobs:
         uses: denoland/setup-deno@v1
       
       - name: 📝 Build Docs
-        run: deno task lume
+        run: deno task build
         working-directory: ./docs
 
       - name: 📤 Upload artifact
@@ -103,9 +104,6 @@ jobs:
 
   deploy:
     name: 🚀 Deploy
-    permissions:
-      pages: write
-      id-token: write
 
     environment:
       name: github-pages
