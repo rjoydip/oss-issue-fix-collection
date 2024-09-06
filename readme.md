@@ -32,23 +32,25 @@ The hono repository issue reproduce and solutions.
 
 ### Hono Github
 
-- [@hono/github/issue-3238](./hono/github/3238/)
-- [@hono/github/issue-3242](./hono/github/3242/)
-- [@hono/github/issue-3254](./hono/github/3254/)
-- [@hono/github/issue-3271](./hono/github/3271/)
-- [@hono/github/issue-3275](./hono/github/3275/)
+- [@hono/github/issue-3238](./hono/github/runtime-deno/3238/)
+- [@hono/github/issue-3242](./hono/github/runtime-bun/3242/)
+- [@hono/github/issue-3254](./hono/github/runtime-deno/3254/)
+- [@hono/github/issue-3271](./hono/github/runtime-bun3271/)
+- [@hono/github/issue-3275](./hono/github/runtime-node/3275/)
+  - [@hono/github/issue-3275/client](./hono/github/runtime-node/3275/client)
+  - [@hono/github/issue-3275/server](./hono/github/runtime-node/3275/server)
 
 ### Hono Discord
 
-- [@hono/discord/1276209554279108745](./hono/discord/1276209554279108745/)
-- [@hono/discord/1276699964776513628](./hono/discord/1276699964776513628/)
-- [@hono/discord/1275791703797927959](./hono/discord/1275791703797927959/)
+- [@hono/discord/1276209554279108745](./hono/discord/runtime-bun/1276209554279108745/)
+- [@hono/discord/1276699964776513628](./hono/discord/runtime-deno/1276699964776513628/)
+- [@hono/discord/1275791703797927959](./hono/discord/runtime-deno/1275791703797927959/)
 
 ## Neverthrow
 
 The neverthrow repository issue reproduce and solutions.
 
-- [neverthrow/issue-564](./neverthrow/564/)
+- [neverthrow/issue-564](./neverthrow/runtime-deno/564/)
 
 ### License
 

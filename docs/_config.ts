@@ -24,13 +24,14 @@ const markdown = {
 const site = lume(
   {
     location: new URL("https://lume.land"),
-  },
+  },  
   { markdown },
 );
 
 site
   .ignore("scripts")
   .copy("static", ".")
+  .use(toc())
   .use(codeHighlight({
     languages: {
       vento: ventoLang,

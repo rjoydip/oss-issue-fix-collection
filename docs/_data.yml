@@ -7,3 +7,5 @@ metas:
   color: "#141b1f"
   icon: /apple-touch-icon.png
   generator: true
+
+layout: landing.vto

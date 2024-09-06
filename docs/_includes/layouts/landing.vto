@@ -40,24 +40,26 @@ page_css: landing.css
           <img src="/icons/arrow-right.svg" inline>
         </a>
       </div>
+    </div>
 
+    <div class="landing-badges">
       <lume-shield data-name="denoland/lume"></lume-shield>
-        {{ for badge of badges }}
-          <lume-shield data-name="{{ badge.name }}" data-url="{{ badge.url }}" data-version="{{ badge.version }}" data-color="{{ badge.color }}" data-skip-nudd></lume-shield>
-        {{ /for }}
-      </div>
+      {{ for badge of badges }}
+        <lume-shield data-name="{{ badge.name }}" data-url="{{ badge.url }}" data-version="{{ badge.version }}" data-color="{{ badge.color }}" data-skip-nudd></lume-shield>
+      {{ /for }}
+    </div>
   </header>
 
   <section class="landing-usage">
-  {{ for block of usage }}
-    <div class="landing-usage-text">
-      <h2>{{ block.title }}</h2>
-      {{ block.description |> md }}
-    </div>
-    <div class="landing-usage-code">
-      {{ block.code |> md }}
-    </div>
-  {{ /for }}
+    {{ for block of usage }}
+      <div class="landing-usage-text">
+        <h2>{{ block.title }}</h2>
+        {{ block.description |> md }}
+      </div>
+      <div class="landing-usage-code">
+        {{ block.code |> md }}
+      </div>
+    {{ /for }}
   </section>
 
   <section class="landing-contribute">
@@ -68,7 +70,7 @@ page_css: landing.css
         {{ for contributor of contribute.contributors }}
         <li>
           <a href="{{ contributor.url }}" title="{{ contributor.name }}">
-            <img src="{{ contributor.img }}" srcset="{{ contributor.img }}, {{ contributor.img |> replace(".webp", "@2x.webp") }} 2x" height="100" width="100" alt="{{ contributor.name }}">
+            <img src="{{ contributor.img }}" srcset="{{ contributor.img }}, {{ contributor.img |> replace(".jpg", "@2x.jpg") }} 2x" height="100" width="100" alt="{{ contributor.name }}">
           </a>
         </li>
         {{ /for }}
