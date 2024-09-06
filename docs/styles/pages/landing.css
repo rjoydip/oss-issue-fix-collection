@@ -28,6 +28,10 @@
     }
   }
 
+  .landing-badges {
+    display: flex;
+  }
+
   @media (min-width: 1000px) {
     display: grid;
     grid-template-columns: minmax(620px, 1fr) 1fr;

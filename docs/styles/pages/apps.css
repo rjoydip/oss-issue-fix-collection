@@ -1,8 +1,7 @@
-.doc {
+.apps {
   max-width: var(--max-width);
   margin: var(--row-gap-1) auto;
   padding: 0 var(--margin);
-  display: grid;
   grid-template-columns: minmax(0, 1fr);
   grid-template-areas: "content" "sidebar";
   column-gap: var(--column-gap-2);
@@ -14,7 +13,7 @@
     grid-template-areas: "sidebar content";
   }
 }
-.doc-navbar {
+.apps-navbar {
   grid-area: sidebar;
   position: sticky;
   top: 100px;
@@ -31,7 +30,7 @@
     margin-top: 2em;
   }
 }
-.doc-navbar-section {
+.apps-navbar-section {
   border-top: 1px solid var(--color-background-2);
 
   & > summary {
@@ -45,7 +44,7 @@
         display: none;
     }
   }
-  &[open] .doc-navbar-section-title {
+  &[open] .apps-navbar-section-title {
     color: var(--color-foreground);
 
     &::before {
@@ -53,7 +52,7 @@
     }
   }
 }
-.doc-navbar-section-title {
+.apps-navbar-section-title {
   display: flex;
   align-items: center;
   column-gap: 5px;
@@ -77,7 +76,7 @@
     transition: transform var(--animation-duration);
   }
 }
-.doc-navbar-section-links {
+.apps-navbar-section-links {
   list-style: none;
   padding: 0;
   margin: 0 0 10px;
@@ -109,14 +108,14 @@
     }
   }
 }
-.doc-navbar > .doc-navbar-section-links a {
+.apps-navbar > .apps-navbar-section-links a {
   padding-left: 1em;
 }
 
-.doc-content {
+.apps-content {
   grid-area: content;
 }
-.doc-header {
+.apps-header {
   /* border-bottom: solid 1px var(--color-background-2); */
   padding-bottom: var(--row-gap-0);
   margin-bottom: var(--row-gap-1);
@@ -135,7 +134,7 @@
     margin: .3em 0 0;
   }
 }
-.doc-body {
+.apps-body {
   font: var(--text-body);
   letter-spacing: var(--text-body-spacing);
   color: var(--color-foreground-1);
@@ -233,12 +232,12 @@
     margin-top: 1em;
   }
 }
-.doc-footer {
+.apps-footer {
   padding: var(--row-gap-0) 0;
   border-top: solid 1px var(--color-background-2);
   margin-top: var(--row-gap-1);
 }
-.doc-pagination {
+.apps-pagination {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -267,7 +266,7 @@
     }
   }
 }
-.doc-related {
+.apps-related {
   margin-top: var(--row-gap-1); 
 
   h2 {

@@ -7,6 +7,7 @@
   max-width: var(--max-width);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: auto;
   text-align: center;
   padding: 0 var(--margin);
@@ -14,7 +15,6 @@
 .footer-copyright {
   margin: 0;
   padding: var(--row-gap-0) 0;
-
   & a {
     color: currentColor;
   }
@@ -22,37 +22,40 @@
 .footer-left {
   margin: 0;
   padding: var(--row-gap-0) 0;
+}
+.footer-middle {
+  margin: 0;
+}
 
-  .footer-links {
-    margin: 0;
-    list-style: none;
-    padding: 0;
+.footer-links {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  & svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  & a {
+    text-decoration: none;
+    font: var(--text-caption-bold);
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    column-gap: 10px;
+    padding: 10px;
+    border-radius: var(--border-radius-small);
+    color: currentColor;
+    white-space: nowrap;
 
-    & svg {
-      display: block;
-      width: 20px;
-      height: 20px;
-      fill: currentColor;
-    }
-
-    & a {
-      text-decoration: none;
-      font: var(--text-caption-bold);
-      display: flex;
-      align-items: center;
-      column-gap: 10px;
-      padding: 10px;
-      border-radius: var(--border-radius-small);
-      color: currentColor;
-      white-space: nowrap;
-
-      &:hover {
-        color: var(--color-foreground);
-        background: var(--color-background-2);
-      }
+    &:hover {
+      color: var(--color-foreground);
+      background: var(--color-background-2);
     }
   }
 }
