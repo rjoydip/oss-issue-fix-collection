@@ -1,11 +1,21 @@
+---
+title: 'Hono Github Issue 3271'
+layout: ''
+---
+
 # @hono/github/issue-3271
 
-[https://github.com/honojs/hono/issue/3271](https://github.com/honojs/hono/issue/3271)
+<https://github.com/honojs/hono/issue/3271>
+
+## Contents
+
+* [Solution](#solution)
+* [Setup](#setup)
 
 ## Solution
 
 Please check
-[https://github.com/honojs/hono/issues/3271#issuecomment-2302675787](https://github.com/honojs/hono/issues/3271#issuecomment-2302675787)
+<https://github.com/honojs/hono/issues/3271#issuecomment-2302675787>
 of solution being provided.
 
 > **Not working**

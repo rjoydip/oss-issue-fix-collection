@@ -17,3 +17,4 @@ for await (const file of await getFiles(configPattern)) {
     if (stderr) console.error("stderr:", stderr);
   }
 }
+console.log("\n%c>> Complement all test execution", "color:#C68FE6")

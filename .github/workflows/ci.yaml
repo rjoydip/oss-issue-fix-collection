@@ -60,7 +60,7 @@ jobs:
         run: npm install -g yarn
 
       - name: 🧹 Cleanup
-        run: deno run --allow-read --allow-write scripts/clean/docs.ts
+        run: deno run --allow-read --allow-write scripts/doc/clean.ts
 
       - name: ⏳ Run Install
         run: deno run --allow-read --allow-env --allow-run scripts/run/install.ts
@@ -78,7 +78,9 @@ jobs:
         run: deno run --allow-read --allow-env --allow-run scripts/run/test.ts
     
       - name: 📜 Generate Docs
-        run: deno run --allow-read --allow-env --allow-run scripts/gen/doc.ts
+        run: |
+          deno run --allow-read --allow-env --allow-run scripts/doc/gen.ts
+          deno run --allow-read --allow-write scripts/doc/for-docs.ts
 
   build:
     name: 🏗️ Build

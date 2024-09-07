@@ -1,6 +1,16 @@
+---
+title: 'Hono Github Issue 3254'
+layout: ''
+---
+
 # @hono/github/issue-3254
 
-[https://github.com/honojs/hono/3254](https://github.com/honojs/hono/3254)
+<https://github.com/honojs/hono/3254>
+
+## Contents
+
+* [Solution](#solution)
+* [Setup](#setup)
 
 ## Solution
 

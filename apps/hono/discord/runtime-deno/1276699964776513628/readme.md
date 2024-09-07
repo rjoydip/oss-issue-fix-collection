@@ -1,11 +1,21 @@
+---
+title: 'Hono Discord Problem 1276699964776513628'
+layout: ''
+---
+
 # @hono/discord/problem-1276699964776513628
 
-[https://discord.com/channels/1011308539819597844/1276699964776513628](https://discord.com/channels/1011308539819597844/1276699964776513628)
+<https://discord.com/channels/1011308539819597844/1276699964776513628>
+
+## Contents
+
+* [Solution](#solution)
+* [Setup](#setup)
 
 ## Solution
 
 Provided solution here
-[https://discord.com/channels/1011308539819597844/1276699964776513628/1277141663612928052](https://discord.com/channels/1011308539819597844/1276699964776513628/1277141663612928052)
+<https://discord.com/channels/1011308539819597844/1276699964776513628/1277141663612928052>
 
 ```ts
 import { Hono, TypedResponse } from "hono";

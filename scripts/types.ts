@@ -22,3 +22,6 @@ export type RuntimeMapper = {
         }
     };
 }
+
+type Position = { line: number, column: number, offset: number }
+export type UnistVisit = { type: string; value: string; position: { start: Position, end: Position} }
