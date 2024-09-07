@@ -1,11 +1,6 @@
 {
   "imports": {
-    "@std/fs": "jsr:@std/fs@^1.0.2",
-    "@std/path": "jsr:@std/path@^1.0.3",
-    "@mdit/plugin-alert": "npm:@mdit/plugin-alert@^0.13.1",
-    "empathic": "npm:empathic@^1.0.0",
     "lume/": "https://deno.land/x/lume@v2.3.0/",
-    "lume_markdown_plugins/": "https://deno.land/x/lume_markdown_plugins@v0.6.0/",
     "vento/": "https://deno.land/x/vento@v0.10.2/"
   },
   "lock": false,

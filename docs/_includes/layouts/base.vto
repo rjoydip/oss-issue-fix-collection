@@ -43,7 +43,7 @@
       <link rel="stylesheet" href="/styles/pages/{{ page_css }}">
     {{ /if }}
 
-    <script src="/main.js" type="module"></script>
+    <script src="/custom/inject.js" type="module"></script>
   </head>
   <body>
     {{ include "templates/navbar.vto" }}
@@ -63,6 +63,7 @@
         mediaMatch(mediaQuery).addEventListener("change", (event) => {
           storeTheme(event.matches);
         });
+      });
     </script>
   </body>
 </html>

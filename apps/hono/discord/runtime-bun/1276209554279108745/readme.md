@@ -1,6 +1,18 @@
+---
+title: 'Hono Discord Problem 1276209554279108745'
+layout: ''
+---
+
 # @hono/discord/problem-1276209554279108745
 
-Provided solution here [https://discord.com/channels/1011308539819597844/1276209554279108745/1276928165155180565](https://discord.com/channels/1011308539819597844/1276209554279108745/1276928165155180565)
+Provided solution here <https://discord.com/channels/1011308539819597844/1276209554279108745/1276928165155180565>
+
+## Contents
+
+* [Solution](#solution)
+* [Setup](#setup)
+
+## Solution
 
 Without Promise
 

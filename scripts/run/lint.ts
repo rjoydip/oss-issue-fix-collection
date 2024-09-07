@@ -47,3 +47,4 @@ for await (const file of await getFiles(configPattern)) {
             if (stderr && !stderr.includes('$')) console.error("stderr:", stderr);
         })
 }
+console.log("\n%c>> Complement all linting", "color:#C68FE6")

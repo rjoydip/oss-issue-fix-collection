@@ -1,8 +1,18 @@
+---
+title: 'Neverthrow Issue 564'
+layout: ''
+---
+
 # neverthrow/issue-564
 
-[https://github.com/honojs/neverthrow/564](https://github.com/honojs/neverthrow/564)
+<https://github.com/honojs/neverthrow/564>
 
-## Comment
+## Contents
+
+* [Solution](#solution)
+* [Setup](#setup)
+
+## Solution
 
 Provided comment here
 [564#issuecomment-2297137078](https://github.com/supermacro/neverthrow/issues/564#issuecomment-2297137078)

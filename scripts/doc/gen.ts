@@ -1,14 +1,16 @@
 import { dirname } from "jsr:@std/path/dirname";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
-import { getFiles, denoDocsPattern, runtimeMapper, isYarn, isPnpm } from "../utils.ts";
+import { getFiles, denoDocsPattern, runtimeMapper, isYarn, isPnpm, getRoot } from "../utils.ts";
 import { Output } from "../types.ts";
 import { Agent } from "../types.ts";
 
 const exca = promisify(exec);
 const getCmd = async (agent: Agent, cwd: string, cmd: { doc: string }) => `${agent === 'node' ? await isPnpm(cwd) ? 'pnpm run' : await isYarn(cwd) ? 'yarn run' : 'npm run' : agent} ${cmd?.doc || 'doc'}`
 
-for await (const file of await getFiles(denoDocsPattern)) {
+for await (const file of await getFiles(denoDocsPattern, {
+    root: getRoot()
+})) {
     const { name, path } = file;
     const { agent, cmd = { doc: 'doc' } } = runtimeMapper[name]
     const cwd = dirname(path)
@@ -47,3 +49,5 @@ for await (const file of await getFiles(denoDocsPattern)) {
             if (stderr && !stderr.includes('$')) console.error("stderr:", stderr);
         })
 }
+
+console.log("\n%c>> Generated docs", "color:#C68FE6")
