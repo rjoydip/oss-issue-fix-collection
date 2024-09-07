@@ -1,6 +1,6 @@
 export default class LumeShield extends HTMLElement {
   async connectedCallback() {
-    if (this.dataset.skipNudd !== '') {
+    if (this.dataset.skipNudd !== "") {
       const data = await getData(this.dataset.name, this.dataset.skipNudd);
 
       if (data) {
@@ -11,11 +11,13 @@ export default class LumeShield extends HTMLElement {
       </a>`;
       }
     } else {
-      const { name, url, color, version } = this.dataset
+      const { name, url, color, version } = this.dataset;
       this.innerHTML = `
     <a href="${url}">
-      ${name}<span style="background-color: ${color}"; color: 'white'>${version.replace(/^v/, "")}</span>
-    </a>`
+      ${name}<span style="background-color: ${color}"; color: 'white'>${
+        version.replace(/^v/, "")
+      }</span>
+    </a>`;
     }
   }
 }
