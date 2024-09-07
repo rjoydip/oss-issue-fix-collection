@@ -181,3 +181,4 @@ _cache
 # Custom
 apps/**/docs
 scripts/docs
+docs/doc
