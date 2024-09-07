@@ -1,11 +1,13 @@
-import { getFiles, getRoot } from "../utils.ts";
+import { docsPattern, getFiles, getRoot } from "../utils.ts";
 
-for await (const dir of await getFiles("**/{apps,scripts,docs}/**/{docs,doc}", {
+for await (
+  const dir of await getFiles(docsPattern, {
     root: getRoot(),
-    exclude: ["_site"],
-    includeDirs: true
-})) {
-    await Deno.remove(dir.path, { recursive: true });
+    exclude: ["_site", "scripts/doc"],
+    includeDirs: true,
+  })
+) {
+  await Deno.remove(dir.path, { recursive: true });
 }
 
-console.log("\n%c>> Deleted all docs folders", "color:#C68FE6")
+console.log("\n%c>> Deleted all docs folders", "color:#C68FE6");
