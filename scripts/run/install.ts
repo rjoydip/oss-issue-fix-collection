@@ -10,4 +10,4 @@ for await (const file of await getFiles(installPattern)) {
     silent: false,
   });
 }
-console.log("\n%c>> Complement all installation", "color:#C68FE6")
+console.log("\n%c>> Complement all installation", "color:#C68FE6");
