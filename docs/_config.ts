@@ -10,12 +10,9 @@ import postcss from "lume/plugins/postcss.ts";
 import nesting from "npm:postcss-nesting";
 import sitemap from "lume/plugins/sitemap.ts";
 import metas from "lume/plugins/metas.ts";
-import toc from "lume_markdown_plugins/toc.ts";
-import { alert } from "npm:@mdit/plugin-alert";
 import ventoLang from "vento/highlightjs-vento.js";
 
 const markdown = {
-  plugins: [toc, alert],
   options: {
     linkify: true,
   },
@@ -29,9 +26,7 @@ const site = lume(
 );
 
 site
-  .ignore("scripts")
   .copy("static", ".")
-  .use(toc())
   .use(codeHighlight({
     languages: {
       vento: ventoLang,
