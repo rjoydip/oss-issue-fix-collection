@@ -1,4 +1,5 @@
 import { dirname } from "jsr:@std/path/dirname";
+import { error, info } from "@std/log";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
 import {
@@ -42,7 +43,6 @@ for await (const file of await getFiles(configPattern)) {
     outputs = await Promise.all(agent.map(async (ag) => {
       const $cmd = await getCmd(ag, cwd, cmd);
       if (path.includes(ag)) {
-        console.log(path);
         const { stderr, stdout } = await exca($cmd, {
           cwd,
         });
@@ -59,8 +59,8 @@ for await (const file of await getFiles(configPattern)) {
   outputs
     .filter((i) => i.stderr && i.stdout)
     .map(({ stdout, stderr }) => {
-      if (stdout) console.log("stdout:", stdout);
-      if (stderr && !stderr.includes("$")) console.error("stderr:", stderr);
+      if (stdout) info(stdout);
+      if (stderr && !stderr.includes("$")) error(stderr);
     });
 }
 console.log("\n%c>> Complement all checking", "color:#C68FE6");

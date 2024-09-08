@@ -41,8 +41,8 @@ app.use(async (_, next) => {
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-fix-collection/git
-cd oss-issue-fix-collection/hono/github/3271
+git clone https://github.com/rjoydip/oss-issue-fix-collection.git
+cd oss-issue-fix-collection/honojs/hono/github/3271
 ```
 
 To install dependencies:

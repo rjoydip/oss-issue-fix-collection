@@ -14,7 +14,7 @@ layout: 'layouts/apps.vto'
 
 The repository open source issue fixing collectio.
 
-## Table of contains
+## Contains
 
 * [Deno](#deno)
   * [Deno Std](#deno-std)
@@ -37,19 +37,19 @@ The hono repository issue reproduce and solutions.
 
 ### Hono Github
 
-* [@hono/github/issue-3238](./apps/hono/github/runtime-deno/3238/)
-* [@hono/github/issue-3242](./apps/hono/github/runtime-bun/3242/)
-* [@hono/github/issue-3254](./apps/hono/github/runtime-deno/3254/)
-* [@hono/github/issue-3271](./apps/hono/github/runtime-bun/3271/)
-* [@hono/github/issue-3275](./apps/hono/github/runtime-node/3275/)
-  * [@hono/github/issue-3275/client](./apps/hono/github/runtime-node/3275/client)
-  * [@hono/github/issue-3275/server](./apps/hono/github/runtime-node/3275/server)
+* [@hono/github/issue-3238](./apps/honojs/hono/github/runtime-deno/3238/)
+* [@hono/github/issue-3242](./apps/honojs/hono/github/runtime-bun/3242/)
+* [@hono/github/issue-3254](./apps/honojs/hono/github/runtime-deno/3254/)
+* [@hono/github/issue-3271](./apps/honojs/hono/github/runtime-bun/3271/)
+* [@hono/github/issue-3275](./apps/honojs/hono/github/runtime-node/3275/)
+  * [@hono/github/issue-3275/client](./apps/honojs/hono/github/runtime-node/3275/client)
+  * [@hono/github/issue-3275/server](./apps/honojs/hono/github/runtime-node/3275/server)
 
 ### Hono Discord
 
-* [@hono/discord/1276209554279108745](./apps/hono/discord/runtime-bun/1276209554279108745/)
-* [@hono/discord/1276699964776513628](./apps/hono/discord/runtime-deno/1276699964776513628/)
-* [@hono/discord/1275791703797927959](./apps/hono/discord/runtime-deno/1275791703797927959/)
+* [@hono/discord/1276209554279108745](./apps/honojs/hono/discord/runtime-bun/1276209554279108745/)
+* [@hono/discord/1276699964776513628](./apps/honojs/hono/discord/runtime-deno/1276699964776513628/)
+* [@hono/discord/1275791703797927959](./apps/honojs/hono/discord/runtime-deno/1275791703797927959/)
 
 ## Neverthrow
 

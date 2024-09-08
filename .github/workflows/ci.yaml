@@ -74,6 +74,9 @@ jobs:
       - name: ⚡ Run Linter
         run: deno run --allow-read --allow-env --allow-run --allow-sys scripts/run/lint.ts
 
+      - name: 🗎 Automd Validation
+        run: deno run --allow-read --allow-write --allow-env scripts/doc/automd.ts
+
       - name: 🧪 Run Test
         run: deno run --allow-read --allow-env --allow-run scripts/run/test.ts
     

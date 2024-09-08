@@ -40,7 +40,7 @@ app.get("/", (c): TypedResponse<Response<string>, 200> => {
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-fix-collection/git
+git clone https://github.com/rjoydip/oss-issue-fix-collection.git
 cd oss-issue-fix-collection/hono/discord/1276699964776513628
 ```
 

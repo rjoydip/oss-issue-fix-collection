@@ -22,7 +22,7 @@ Provided comment here
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-fix-collection/git
+git clone https://github.com/rjoydip/oss-issue-fix-collection.git
 cd oss-issue-fix-collection/neverthrow/564
 ```
 

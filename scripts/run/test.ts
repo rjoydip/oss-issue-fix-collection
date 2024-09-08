@@ -1,4 +1,5 @@
 import { dirname } from "jsr:@std/path/dirname";
+import { error, info } from "@std/log"
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
 import { configPattern, getFiles } from "../utils.ts";
@@ -13,8 +14,8 @@ for await (const file of await getFiles(configPattern)) {
   if (tasks && tasks["test"]) {
     Deno.chdir(dirname(file.path));
     const { stdout, stderr } = await exca(tasks["test"]);
-    if (stdout) console.log("stdout:", stdout);
-    if (stderr) console.error("stderr:", stderr);
+    if (stdout) info(stdout);
+    if (stderr) stderr.includes('0 fail') ? info(stderr) : error(stderr);
   }
 }
-console.log("\n%c>> Complement all test execution", "color:#C68FE6");
+console.log("%c>> Complement all test execution", "color:#C68FE6");
