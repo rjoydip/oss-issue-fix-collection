@@ -1,4 +1,5 @@
 import { dirname } from "jsr:@std/path/dirname";
+import { error, info } from "@std/log";
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
 import {
@@ -63,8 +64,8 @@ for await (
   outputs
     .filter((i) => i.stderr && i.stdout)
     .map(({ stdout, stderr }) => {
-      if (stdout) console.log("stdout:", stdout);
-      if (stderr && !stderr.includes("$")) console.error("stderr:", stderr);
+      if (stdout) info(stdout);
+      if (stderr && !stderr.includes("$")) error(stderr);
     });
 }
 

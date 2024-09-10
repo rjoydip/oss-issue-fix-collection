@@ -24,7 +24,7 @@ Provided solution here
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-fix-collection/git
+git clone https://github.com/rjoydip/oss-issue-fix-collection.git
 cd oss-issue-fix-collection/hono/discord/1275791703797927959
 ```
 

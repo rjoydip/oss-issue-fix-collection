@@ -2,21 +2,21 @@ import { join } from "@std/path";
 import { existsSync } from "@std/fs/exists";
 import { parse } from "@std/path/parse";
 import remarkFrontmatter from "npm:remark-frontmatter";
-import remarkParse from "npm:remark-parse";
-import remarkStringify from "npm:remark-stringify";
 import remarkToc from "npm:remark-toc";
-import { unified } from "npm:unified";
+import { remark } from "npm:remark";
 import { read } from "npm:to-vfile";
 import { visit } from "npm:unist-util-visit";
 import { appsNS, docPath, getFiles, getRoot, globMdPattern } from "../utils.ts";
 
 const root = getRoot();
+const _docPath = join(root, docPath)
+if(existsSync(_docPath)) await Deno.remove(_docPath, { recursive: true });
 
 for await (
   const file of await getFiles(globMdPattern, {
     root,
     includeDirs: false,
-    exclude: ["**/docs/doc"],
+    exclude: ["**/docs/doc", "templates"],
   })
 ) {
   const { path } = file;
@@ -30,10 +30,8 @@ for await (
   await Deno.copyFile(path, join(distDir, "index.md"));
 
   // Refactor
-  const mdfile = await unified()
-    .use(remarkParse)
+  const mdfile = await remark()
     .use(remarkToc)
-    .use(remarkStringify)
     .use(remarkFrontmatter, ["yaml"])
     .use(() => {
       // deno-lint-ignore no-explicit-any

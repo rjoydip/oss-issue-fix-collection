@@ -34,8 +34,8 @@ app.get(
 To clone:
 
 ```sh
-git clone https://github.com/rjoydip/oss-issue-fix-collection/git
-cd oss-issue-fix-collection/hono/github/3254
+git clone https://github.com/rjoydip/oss-issue-fix-collection.git
+cd oss-issue-fix-collection/honojs/hono/github/3254
 ```
 
 To run:
